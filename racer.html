@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script type='text/javascript' src="theScript.js"></script>
+        <link rel="stylesheet" type="text/css" href="racestyle.css">
+        
+    </head>
+<body>
+<div class="header"><img src="name.jpg" align="right" valign="top"></div>
+    <br />
+<div class="main">
+    <h1>SCCA RTP Calculator</h1>
+    <form id="cat">
+        <p>Are you racing in Pro Solo?
+    <input type="radio" name="category" value="yes" default="checked"> Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="category" value="no"> No<br />
+        </p>
+    </form>
+    <p id="prosoloresponse"></p>
+
+    <table>
+        <tr>
+            <td>
+                <h2>Your SCCA Class Category:</h2>
+                <select id="car_class">
+                    <option value="">Enter class</option>
+                        <div class="classlist">
+                        <option class="classlist" value="street">Street</option>
+                        <option class="classlist" value="street_touring">Street Touring</option>
+                        <option class="classlist" value="street_prepared">Street Prepared</option>
+                        <option class="classlist" value="cam">CAM</option>
+                        <option class="classlist" value="prepared">Prepared</option>
+                        <option class="classlist" value="street_mod">Street Mod</option>
+                        <option class="classlist" value="mod">Mod</option>
+                        <option class="classlist" value="junior">Junior</option>
+                        </div>
+                </select>
+            </td>
+            <td>
+                <h2>Competitor's Class Catergory:</h2> 
+                <select id="comp_class">
+                    <option value="">Enter class</option>
+                        <div class="comp_classlist">
+                        <option class="comp_classlist" value="street">Street</option>
+                        <option class="comp_classlist" value="street_touring">Street Touring</option>
+                        <option class="comp_classlist" value="street_prepared">Street Prepared</option>
+                        <option class="comp_classlist" value="cam">CAM</option>
+                        <option class="comp_classlist" value="prepared">Prepared</option>
+                        <option class="comp_classlist" value="street_mod">Street Mod</option>
+                        <option class="comp_classlist" value="mod">Mod</option>
+                        <option class="comp_classlist" value="junior">Junior</option>
+                        </div>
+                </select>
+            </td>
+       </tr>
+        <tr>
+            <td>
+                <h2>Your SCCA Subclass:</h2>
+
+                <select id="car_subclass">
+                    <option value="">Enter class</option>   
+                </select>
+                
+            </td>
+            <td>
+                <h2>Competitor's SCCA Subclass:</h2>
+                <select id="comp_subclass">
+                <option value="">Enter class</option>
+                </select>
+            </td>
+       </tr>
+        <tr>
+            <td>  
+                <h2>Enter your time:<span class="note"><br />(if you've run)</span></h2>
+                <input type="text" id="time" name="Run Time" default="your race time">
+            </td>
+            <td>
+                <h2>Competitor's time:<span class="note"><br />(if he/she has run)</span></h2>
+                <input type="text" id="comp_time" name="Run Time:">
+            </td>
+        </tr>
+    </table>
+    <div id="final">
+    <input type="button" id="results" value="Results" default=" "></input>
+    <p id="resultComment"></p>
+    </div>
+</div>
+</body>
+</html>
