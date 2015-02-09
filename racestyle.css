@@ -3,10 +3,19 @@ body {
     font-family: "Verdana", "Arial", sans-serif;
 }
 
-tr,
-td {
-    padding: 0px 30px 0px 50px;
-    width: 200px;
+
+.guts {
+    align-content: center;
+    position: relative;
+    border: 4px solid blue;
+}
+
+#userinputs {
+    float: left;
+}
+
+#compinputs {
+    float: right;
 }
 
 h1 {
@@ -30,17 +39,62 @@ div.header {
     vertical-align: top;
 }
 
-div.main {
+@media (min-width: 575px) {
+   .main {
     background-color: #CCCCCC;
-    padding: 20px;
+    padding: 20px 20px 0px 20px;
     width: 35%;
     margin-left: auto;
     margin-right: auto;
     border-radius: 10px;
     box-shadow: 5px 5px 5px #888888;
     min-width: 550px;
-}
+    min-height: 430px;
+    position: relative;
 
+}
+#final {
+    position: relative;
+    position: absolute;
+    bottom: 10px;
+    margin-left: -5px;
+    height: 72px;
+    width: 550px;
+
+}
+}
+@media (max-width: 575px) {
+  .main {
+    background-color: #CCCCCC;
+    padding: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px #888888;
+    min-width: 275;
+    min-height: 500px;
+  }
+   h1 {
+    background-color: #FFFFFF;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-right: auto;
+    border-radius: 4px;
+    font-size: 18px;
+}
+   #userinputs {
+    text-align: left;
+    float: none;
+    padding-left: 20px;
+}
+   #compinputs{
+    text-align:left;
+    float: none;
+    padding-left: 20px;
+}
+}
 #cat {
     text-align: center;
 }
@@ -52,8 +106,8 @@ div.main {
 }
 
 #final {
+    left: auto;
+    right: auto;
     text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 20px;
+    padding-top: 10px;
 }
