@@ -3,6 +3,9 @@ body {
     font-family: "Verdana", "Arial", sans-serif;
 }
 
+#prosolo {
+    height: 60px;
+}
 
 .guts {
     align-content: center;
@@ -49,12 +52,12 @@ div.header {
     border-radius: 10px;
     box-shadow: 5px 5px 5px #888888;
     min-width: 550px;
-    min-height: 430px;
+    min-height: 450px;
     position: relative;
 
 }
 #final {
-    position: relative;
+
     position: absolute;
     bottom: 10px;
     margin-left: -5px;
