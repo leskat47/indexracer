@@ -47,7 +47,7 @@ div.header {
         border-radius: 10px;
         box-shadow: 5px 5px 5px #888888;
         min-width: 550px;
-        min-height: 425px;
+        min-height: 475px;
         position: relative;
     }
     #final {
@@ -64,11 +64,12 @@ div.header {
     .col1 {
         float: left;
         text-align: left;
-        
+        padding: 10px;
     }
     .col2 {
         float: right;
         text-align: left;
+        padding: 10px;
     }
     .main2 {
         background-color: #F2F2F2;
