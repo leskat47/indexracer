@@ -30,20 +30,9 @@
     <br />
     <div class="main">
         <h1>SCCA RTP Calculator</h1>
-        <div id="prosolo">
-           <form id="cat">
-            <p>Are you racing in Pro Solo?
-                <input type="radio" name="category" value="yes"> Yes&nbsp;&nbsp;&nbsp;
-                <input type="radio" name="category" value="no"> No
-                <br />
-            </p>
-           </form>
-           <p id="prosoloresponse"></p>
-        </div>
-
-
-
-        <div id="userinputs">
+        <form id="cat">
+           
+        <div id="userinputs" class="col1">
             <h2>Your SCCA Class Category:</h2>
             <select id="car_class">
                 <option value="">Enter class</option>
@@ -57,17 +46,19 @@
                     <option class="classlist" value="mod">Mod</option>
                     <option class="classlist" value="junior">Junior</option>
                 </div>
+                
             </select>
-            <h2>Your SCCA Subclass:</h2>
+            <h2>Your SCCA Class:</h2>
 
             <select id="car_subclass">
                 <option value="">Enter class</option>
-            </select>
+            </select><p id="cl_num" class="note">Index number: </p>
+            
             <h2>Enter your time:<span class="note"><br />(if you've run)</span></h2>
             <input type="text" id="time" name="Run Time" default="your race time">
 
         </div>
-        <div id="compinputs">
+        <div id="compinputs" class="col2">
             <h2>Competitor's Class Catergory:</h2>
             <select id="comp_class">
                 <option value="">Enter class</option>
@@ -82,24 +73,42 @@
                     <option class="comp_classlist" value="junior">Junior</option>
                 </div>
             </select>
-            <h2>Competitor's SCCA Subclass:</h2>
+            <h2>Competitor's SCCA Class:</h2>
             <select id="comp_subclass">
                 <option value="">Enter class</option>
             </select>
+            <p id="comp_num" class="note">Index number: </p>
+            
             <h2>Competitor's time:<span class="note"><br />(if he/she has run)</span></h2>
             <input type="text" id="comp_time" name="Run Time:">
+            
         </div>
-
-
+        </form>
+        
         <div id="final">
-
-            <input type="button" id="results" value="Results" default=" "></input>
-
-            <p id="resultComment"></p>
+           
+            <h2>Results</h2>
+            <p id="resultComment">&nbsp;</p>
             <br />
 
         </div>
 
+    </div>
+    
+    
+    <div class="main2" id="tables">
+        <h2>Your Time Equivalents</h2>
+        
+        <div id="index_table" class="col1">
+        
+        </div>
+        
+        <div id="index_table2" class="col2">
+            
+        </div>
+    
+    
+    
     </div>
 </body>
 
