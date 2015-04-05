@@ -5,6 +5,7 @@
 $(document).ready(function () {
     "use strict";
     $('#tables').hide();
+    $('#time').removeAttr('disabled'); 
                                                                 //Declare classes as variables. Arrays contains subclass and index number
     
     var street = [["Street Options"], ["SS", 0.835, 0], ["AS", 0.829, 0], ["BS", 0.826, 0], ["CS", 0.814, 0], ["DS", 0.812, 0], ["ES", 0.808, 0], ["FS", 0.810, 0], ["GS", 0.806, 0], ["HS", 0.796, 0], ["SSR", 0.859, 0]],
