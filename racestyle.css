@@ -80,7 +80,7 @@ div.header {
         border-radius: 10px;
         box-shadow: 5px 5px 5px #888888;
         min-width: 200px;
-        min-height: 400px;
+        min-height: 450px;
         position: relative;
         text-align: center;
         font-size: 10px;
@@ -119,7 +119,7 @@ div.header {
         border-radius: 10px;
         box-shadow: 5px 5px 5px #888888;
         min-width: 200px;
-        min-height: 300px;
+        min-height: 400px;
         position: relative;
         text-align: center;
     }
