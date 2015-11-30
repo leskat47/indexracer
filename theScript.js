@@ -6,7 +6,7 @@ $(document).ready(function () {
     "use strict";
     $('#tables').hide();
     $('#time').removeAttr('disabled'); 
-                                                                //Declare classes as variables. Arrays contains subclass and index number
+                                                                //Declare racing classes as variables. Arrays contains subclass and index number
     
     var street = [["Street Options"], ["SS", 0.835, 0], ["AS", 0.829, 0], ["BS", 0.826, 0], ["CS", 0.814, 0], ["DS", 0.812, 0], ["ES", 0.808, 0], ["FS", 0.810, 0], ["GS", 0.806, 0], ["HS", 0.796, 0], ["SSR", 0.859, 0]],
         street_touring = [["Street Touring Options"], ["STF", 0.801, 0], ["STS", 0.828, 0], ["STX", 0.831, 0], ["STR", 0.838, 0], ["STU", 0.844, 0]],
@@ -143,16 +143,18 @@ $(document).ready(function () {
     $("#car_class").change(function () {
         $("#car_subclass").empty();
         $("#index_table").empty();
+        $("#index_table2").empty();
         runner = 1;
         subclasslist(runner);
     });
     $("#comp_class").change(function () {
         $("#comp_subclass").empty();
         $("#comp_index_table").empty();
+        $("#index_table2").empty();
         runner = 2;
         subclasslist(runner);
     });
-                                                                //determine index number and return to display
+                                                                //determine index number and return to view
     $("#car_subclass").change(function () {
         var indexClass = ($("#car_subclass").val()),
             index = indexClass.split(",")[1];
@@ -173,7 +175,9 @@ $(document).ready(function () {
         run_results();
     });
     $("#car_subclass").change(function () {
-        run_results();
+        $("#index_table").empty();
+        $("#index_table2").empty();
+        run_results(1);
     });
     $("#comp_subclass").change(function () {
         run_results();
