@@ -4,18 +4,18 @@
 
 $(document).ready(function () {
     "use strict";
-    $('#tables').hide();
+    $("#tables").css("visibility", "hidden");
     $('#time').removeAttr('disabled'); 
                                                                 //Declare racing classes as variables. Arrays contains subclass and index number
     
-    var street = [["Street Options"], ["SS", 0.835, 0], ["AS", 0.829, 0], ["BS", 0.826, 0], ["CS", 0.814, 0], ["DS", 0.812, 0], ["ES", 0.808, 0], ["FS", 0.810, 0], ["GS", 0.806, 0], ["HS", 0.796, 0], ["SSR", 0.859, 0]],
-        street_touring = [["Street Touring Options"], ["STF", 0.801, 0], ["STS", 0.828, 0], ["STX", 0.831, 0], ["STR", 0.838, 0], ["STU", 0.844, 0]],
-        street_prepared = [["Street Prepared Options"], ["SSP", 0.871, 0], ["ASP", 0.865, 0], ["BSP", 0.863, 0], ["CSP", 0.861, 0], ["DSP", 0.854, 0], ["ESP", 0.849, 0], ["FSP", 0.840, 0]],
-        cam = [["CAM Options"], ["CAM-C", 0.830, 0], ["CAM-T", 0.825, 0], ["CAM-S", 0.836, 0]],
-        prepared = [["Prepared Options"], ["XP", 0.905, 0], ["BP", 0.881, 0], ["CP", 0.864, 0], ["DP", 0.879, 0], ["EP", 0.874, 0], ["FP", 0.880, 0]],
-        street_mod = [["Street Mod Options"], ["SMF", 0.853, 0], ["SM", 0.870, 0], ["SSM", 0.882, 0]],
-        mod = [["Mod Options"], ["AM", 1, 0], ["BM", 0.965, 0], ["CM", 0.922, 0], ["DM", 0.92, 0], ["EM", 0.926, 0], ["FM", 0.924, 0], ["FSAE", 0.989, 0], ["KM", 0.975, 0]],
-        junior = [["Junior Options"], ["JA", 0.880, 0], ["JB", 0.842, 0], ["JC", 0.741, 0]],
+    var street = [["Street Options"], ["SS", 0.835, 0], ["AS", 0.833, 0], ["BS", 0.826, 0], ["CS", 0.819, 0], ["DS", 0.811, 0], ["ES", 0.807, 0], ["FS", 0.814, 0], ["GS", 0.806, 0], ["HS", 0.798, 0], ["HCS", 0.817, 0], ["SSR", 0.860, 0]],
+        street_touring = [["Street Touring Options"], ["STF", 0.809, 0], ["STS", 0.832, 0], ["STX", 0.836, 0], ["STR", 0.841, 0], ["STU", 0.845, 0], ["STP", 0.837, 0]],
+        street_prepared = [["Street Prepared Options"], ["SSP", 0.872, 0], ["ASP", 0.865, 0], ["BSP", 0.863, 0], ["CSP", 0.867, 0], ["DSP", 0.855, 0], ["ESP", 0.852, 0], ["FSP", 0.840, 0]],
+        cam = [["CAM Options"], ["CAM-C", 0.830, 0], ["CAM-T", 0.834, 0], ["CAM-S", 0.848, 0]],
+        prepared = [["Prepared Options"], ["XP", 0.907, 0], ["BP", 0.883, 0], ["CP", 0.864, 0], ["DP", 0.879, 0], ["EP", 0.871, 0], ["FP", 0.860, 0], ["HCR", 0.838, 0]],
+        street_mod = [["Street Mod Options"], ["SMF", 0.861, 0], ["SM", 0.870, 0], ["SSM", 0.882, 0]],
+        mod = [["Mod Options"], ["AM", 1, 0], ["BM", 0.966, 0], ["CM", 0.916, 0], ["DM", 0.919, 0], ["EM", 0.920, 0], ["FM", 0.926, 0], ["FSAE", 0.982, 0], ["KM", 0.954, 0]],
+        junior = [["Junior Options"], ["JA", 0.878, 0], ["JB", 0.842, 0], ["JC", 0.741, 0]],
         scca_class,
         subclass,
         runner,
@@ -115,7 +115,7 @@ $(document).ready(function () {
             $("#resultComment").text("Both racers' classes are needed.");
         }
         if (player === 1 && indexTime > 0) {
-            $("#tables").show();
+            $("#tables").css("visibility", "visible");
             table_loc = "#index_table";
             for (item in class_array) {
                 listclass = class_array[item];
