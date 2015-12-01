@@ -6,6 +6,7 @@ $(document).ready(function () {
     "use strict";
     $("#compinputs").hide();
     $("#final").hide();
+    $(".main2").hide();
     $("#add-comp").click(function() {
         // debugger;
         $("#compare").hide();
@@ -121,7 +122,7 @@ $(document).ready(function () {
             $("#resultComment").text("Both racers' classes are needed.");
         }
         if (player === 1 && indexTime > 0) {
-            $("#tables").css("visibility", "visible");
+            $(".main2").show();
             table_loc = "#index_table";
             for (item in class_array) {
                 listclass = class_array[item];
