@@ -37,6 +37,18 @@ div.header {
     vertical-align: top;
 }
 
+
+#add-comp {
+    font-weight: bold;
+    box-shadow: 2px 2px 2px #888888;
+    padding: 5px 15px 5px 15px;
+    font-size: 15px;
+    border: 2px solid gray;
+    background-color: #ffff66;
+    border-radius: 4px;
+    }
+
+
 @media (min-width: 570px) {
    .main {
         background-color: #CCCCCC;
@@ -70,6 +82,13 @@ div.header {
         text-align: left;
         padding: 10px;
     }
+
+    #compare {
+        padding-top: 10%;
+        display: inline-block;
+    }
+
+
     .col2 {
         float: right;
         text-align: left;
@@ -79,6 +98,7 @@ div.header {
         background-color: #F2F2F2;
         padding: 20px 50px 0px 50px;
         width: 20%;
+        margin-top: 10px;
         margin-left: auto;
         margin-right: auto;
         border-radius: 10px;
@@ -96,7 +116,6 @@ div.header {
         margin-left: auto;
         margin-right: auto;
         text-align: center;
-        margin-right: auto;
         border-radius: 4px;
         font-size: 12px;
         border: solid orange;
@@ -147,6 +166,10 @@ div.header {
         text-align: left;
         float: none;
         padding-left: 20px;
+    }
+    #compare {
+        padding-top: 10%;
+        display: block;
     }
    .col2{
         text-align:left;

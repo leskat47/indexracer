@@ -4,8 +4,14 @@
 
 $(document).ready(function () {
     "use strict";
-    $("#tables").css("visibility", "hidden");
-    $('#time').removeAttr('disabled'); 
+    $("#compinputs").hide();
+    $("#final").hide();
+    $("#add-comp").click(function() {
+        // debugger;
+        $("#compare").hide();
+        $("#compinputs").show();
+        $("#final").show();
+    });
                                                                 //Declare racing classes as variables. Arrays contains subclass and index number
     
     var street = [["Street Options"], ["SS", 0.835, 0], ["AS", 0.833, 0], ["BS", 0.826, 0], ["CS", 0.819, 0], ["DS", 0.811, 0], ["ES", 0.807, 0], ["FS", 0.814, 0], ["GS", 0.806, 0], ["HS", 0.798, 0], ["HCS", 0.817, 0], ["SSR", 0.860, 0]],
@@ -159,6 +165,7 @@ $(document).ready(function () {
         var indexClass = ($("#car_subclass").val()),
             index = indexClass.split(",")[1];
         $("#cl_num").text(index);
+        $('#time').removeAttr('disabled'); 
     });
     $("#comp_subclass").change(function () {
         var indexClass = ($("#comp_subclass").val()),

@@ -55,9 +55,10 @@
             </select><p id="cl_num" class="note">Index number: </p>
             
             <h2>Enter your time:<span class="note"><br />(if you've run)</span></h2>
-            <input type="text" id="time" name="Run Time" default="your race time">
+            <input type="text" id="time" name="Run Time" default="your race time" disabled="true">
 
         </div>
+
         <div id="compinputs" class="col2">
             <h2>Competitor's Class Catergory:</h2>
             <select id="comp_class">
@@ -72,6 +73,7 @@
                     <option class="comp_classlist" value="mod">Mod</option>
                     <option class="comp_classlist" value="junior">Junior</option>
                 </div>
+
             </select>
             <h2>Competitor's SCCA Class:</h2>
             <select id="comp_subclass">
@@ -82,6 +84,9 @@
             <h2>Competitor's time:<span class="note"><br />(if he/she has run)</span></h2>
             <input type="text" id="comp_time" name="Run Time:">
             
+        </div>
+        <div id="compare">
+            <button type="button" id="add-comp">Compare Times <br>with Another Racer</button>
         </div>
         </form>
         
@@ -96,7 +101,7 @@
     </div>
     
     
-    <div class="main2" id="tables">
+    <div class="main2">
         <h2>Your Time Equivalents</h2>
         
         <div id="index_table" class="col1">
