@@ -49,7 +49,7 @@ div.header {
     }
 
 
-@media (min-width: 570px) {
+@media (min-width: 400px) {
    .main {
         background-color: #CCCCCC;
         padding: 20px 20px 0px 20px;
@@ -121,9 +121,9 @@ div.header {
         border: solid orange;
 }
 }
+
     
-    
-@media (max-width: 570px) {
+@media (max-width: 400px) {
   .main {
         background-color: #CCCCCC;
         padding: 5px;
@@ -131,8 +131,8 @@ div.header {
         margin-right: auto;
         border-radius: 10px;
         box-shadow: 5px 5px 5px #888888;
-        width: 350px;
-        min-width: 250px;
+        width: 95%;
+        min-width: 200px;
         
   }
     #logo {
@@ -142,14 +142,15 @@ div.header {
     }
     .main2 {
         background-color: #F2F2F2;
+        font-size: 10px;
         padding: 0px 20px 0px 20px;
         margin-left: auto;
         margin-right: auto;
         border-radius: 10px;
         box-shadow: 5px 5px 5px #888888;
-        width: 300px;
+        width: 80%;
         min-width: 200px;
-        min-height: 520px;
+        min-height: 600px;
         position: relative;
         text-align: center;
     }
@@ -183,6 +184,7 @@ div.header {
     }
     #index_table2{
         float:right;
+        padding-right: 20px;
     }
     #final {
         float: none;
