@@ -19,10 +19,10 @@ $(document).ready(function () {
         street_touring = [["Street Touring Options"], ["STF", 0.809, 0], ["STS", 0.832, 0], ["STX", 0.836, 0], ["STR", 0.841, 0], ["STU", 0.845, 0], ["STP", 0.837, 0]],
         street_prepared = [["Street Prepared Options"], ["SSP", 0.872, 0], ["ASP", 0.865, 0], ["BSP", 0.863, 0], ["CSP", 0.867, 0], ["DSP", 0.855, 0], ["ESP", 0.852, 0], ["FSP", 0.840, 0]],
         cam = [["CAM Options"], ["CAM-C", 0.830, 0], ["CAM-T", 0.834, 0], ["CAM-S", 0.848, 0]],
-        prepared = [["Prepared Options"], ["XP", 0.907, 0], ["BP", 0.883, 0], ["CP", 0.864, 0], ["DP", 0.879, 0], ["EP", 0.871, 0], ["FP", 0.860, 0], ["HCR", 0.838, 0]],
+        prepared = [["Prepared Options"], ["XP", 0.907, 0], ["BP", 0.883, 0], ["CP", 0.864, 0], ["DP", 0.879, 0], ["EP", 0.871, 0], ["FP", 0.880, 0], ["HCR", 0.838, 0]],
         street_mod = [["Street Mod Options"], ["SMF", 0.861, 0], ["SM", 0.870, 0], ["SSM", 0.882, 0]],
         mod = [["Mod Options"], ["AM", 1, 0], ["BM", 0.966, 0], ["CM", 0.916, 0], ["DM", 0.919, 0], ["EM", 0.920, 0], ["FM", 0.926, 0], ["FSAE", 0.982, 0], ["KM", 0.954, 0]],
-        junior = [["Junior Options"], ["JA", 0.878, 0], ["JB", 0.842, 0], ["JC", 0.741, 0]],
+        junior = [["Junior Options"], ["JA", 0.878, 0], ["JB", 0.842, 0], ["JC", 0.734, 0]],
         scca_class,
         subclass,
         runner,
@@ -121,30 +121,30 @@ $(document).ready(function () {
         } else {
             $("#resultComment").text("Both racers' classes are needed.");
         }
+
+
         if (player === 1 && indexTime > 0) {
             $(".main2").show();
             table_loc = "#index_table";
-            for (item in class_array) {
-                listclass = class_array[item];
-                console.log(listclass);
-                for (subclass_iter = 1; subclass_iter < listclass.length; subclass_iter += 1) {
-                    $(table_loc).append(listclass[subclass_iter][0] + "&emsp;" + (indexTime / listclass[subclass_iter][1]).toFixed(3) + "<br />");
-                }
-                $(table_loc).append("<br />");
-            }
+            makeDropdown(table_loc, class_array);
+
             table_loc = "#index_table2";
-            for (item in class_array2) {
-                listclass = class_array2[item];
-                console.log(listclass);
-                for (subclass_iter = 1; subclass_iter < listclass.length; subclass_iter += 1) {
-                    $(table_loc).append(listclass[subclass_iter][0] + "&emsp;" + (indexTime / listclass[subclass_iter][1]).toFixed(3) + "<br />");
-                }
-                $(table_loc).append("<br />");
+            makeDropdown(table_loc, class_array2);
+       }
+
+        function makeDropdown(table_loc, class_array){
+            for (item in class_array) {
+                    listclass = class_array[item];
+                    // console.log(listclass);
+                    for (subclass_iter = 1; subclass_iter < listclass.length; subclass_iter += 1) {
+                        $(table_loc).append(listclass[subclass_iter][0] + "&emsp;" + (indexTime / listclass[subclass_iter][1]).toFixed(3) + "<br />");
+                    }
+                    $(table_loc).append("<br>");
             }
         }
-      //  
-       // }
     }
+
+
                                                                 //Respond to user inputs
                                                                 //populate subclass dropdown
     $("#car_class").change(function () {
@@ -157,7 +157,6 @@ $(document).ready(function () {
     $("#comp_class").change(function () {
         $("#comp_subclass").empty();
         $("#comp_index_table").empty();
-        $("#index_table2").empty();
         runner = 2;
         subclasslist(runner);
     });
@@ -172,22 +171,24 @@ $(document).ready(function () {
         var indexClass = ($("#comp_subclass").val()),
             index = indexClass.split(",")[1];
         $("#comp_num").text(index);
+        $('#comp_time').removeAttr('disabled'); 
     });
                                                                 //Update results display with changes
     $("#time").change(function () {
         $("#index_table").empty();
         $("#index_table2").empty();
+        $(".main2").hide();
         run_results(1);
+        $("#car_subclass").change(function () {
+            run_results(1);
+    });
     });
     $("#comp_time").change(function () {
         run_results();
+        $("#comp_subclass").change(function () {
+            run_results();
     });
-    $("#car_subclass").change(function () {
-        $("#index_table").empty();
-        $("#index_table2").empty();
-        run_results(1);
     });
-    $("#comp_subclass").change(function () {
-        run_results();
-    });
+
+
 });

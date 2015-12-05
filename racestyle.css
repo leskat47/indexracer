@@ -131,7 +131,8 @@ div.header {
         margin-right: auto;
         border-radius: 10px;
         box-shadow: 5px 5px 5px #888888;
-        min-width: 275;
+        width: 350px;
+        min-width: 250px;
         
   }
     #logo {
@@ -146,8 +147,9 @@ div.header {
         margin-right: auto;
         border-radius: 10px;
         box-shadow: 5px 5px 5px #888888;
+        width: 300px;
         min-width: 200px;
-        min-height: 400px;
+        min-height: 520px;
         position: relative;
         text-align: center;
     }
@@ -172,11 +174,16 @@ div.header {
         display: block;
     }
    .col2{
-        text-align:left;
+        text-align: left;
         float: none;
         padding-left: 20px;
     }
-    
+    #index_table {
+        float: left
+    }
+    #index_table2{
+        float:right;
+    }
     #final {
         float: none;
         text-align: left;
