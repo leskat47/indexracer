@@ -38,11 +38,13 @@ div.header {
 }
 
 
-#add-comp {
+button {
     font-weight: bold;
     box-shadow: 2px 2px 2px #888888;
     padding: 5px 15px 5px 15px;
-    font-size: 15px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 10px;
     border: 2px solid gray;
     background-color: #ffff66;
     border-radius: 4px;
@@ -59,7 +61,7 @@ div.header {
         border-radius: 10px;
         box-shadow: 5px 5px 5px #888888;
         min-width: 550px;
-        min-height: 450px;
+        min-height: 500px;
         position: relative;
     }
     #logo {
@@ -68,15 +70,14 @@ div.header {
     }
     #final {
         position: absolute;
-        bottom: 40px;
+        bottom: 90px;
         height: 72px;
         width: 550px;
         left: auto;
         right: auto;
-        text-align: center;
-        padding-top: 0px;
-        
+        text-align: center;  
     }
+
     .col1 {
         float: left;
         text-align: left;
@@ -85,7 +86,7 @@ div.header {
 
     #compare {
         padding-top: 10%;
-        display: inline-block;
+        display: block;
     }
 
 
@@ -170,10 +171,7 @@ div.header {
         float: none;
         padding-left: 20px;
     }
-    #compare {
-        padding-top: 10%;
-        display: block;
-    }
+
    .col2{
         text-align: left;
         float: none;
@@ -202,7 +200,15 @@ div.header {
         border-radius: 4px;
         font-size: 12px;
         border: solid orange;
-}
+    }
+
+    button {
+        margin-top: 10px;
+        margin-bottom: 3px;
+    }
+    .see-equiv {
+        margin-bottom: 10px;
+    }
 }
 #cat {
     text-align: center;
