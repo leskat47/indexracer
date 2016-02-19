@@ -5,14 +5,14 @@
 $(document).ready(function () {
     "use strict";
     $("#compinputs").hide();
-    $("#final").hide();
+    $("#results").hide();
     $(".main2").hide();
     setEquivListener();
     $("#add-comp").click(function() {
         // debugger;
         $("#compare").hide();
         $("#compinputs").show();
-        $("#final").show();
+        $("#results").show();
     });
 
     function setEquivListener() {

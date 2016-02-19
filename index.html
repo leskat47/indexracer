@@ -8,6 +8,109 @@
     <meta name="description" content="IndexRacer: SCCA Solo RTP PAX Calculator Compare your time against competitors' RTP PAX times." />
     <meta name="keywords" content="SCCA,Solo,Solo2,Autocross,AutoX,RTP,PAX,Idx,Index,Calculator,Calc,Compare,Times" />
     <meta name="robots" content="index, follow" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="racestyle.css">
+</head>
+
+<body>
+    <div class="header"><img src="name.jpg" id="logo">
+    </div>
+    <div class="container">
+    	<section class="row">
+    		<main class="main col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
+    			<section class="row">
+			        <article class="col-xs-12">
+		        		<h1>SCCA RTP Calculator</h1>
+		        	</article>
+		        </section>
+		        <form id="cat">
+		        	<section class="row">
+			        	<article id="userinputs" class="col-xs-12 col-sm-6">
+				            <h2>Your SCCA Class Category:</h2>
+				            <select id="car_class">
+				                <option value="" disabled selected>Enter class</option>
+				                <div class="classlist">
+				                    <option class="classlist" value="street">Street</option>
+				                    <option class="classlist" value="street_touring">Street Touring</option>
+				                    <option class="classlist" value="street_prepared">Street Prepared</option>
+				                    <option class="classlist" value="cam">CAM</option>
+				                    <option class="classlist" value="prepared">Prepared</option>
+				                    <option class="classlist" value="street_mod">Street Mod</option>
+				                    <option class="classlist" value="mod">Mod</option>
+				                    <option class="classlist" value="junior">Junior</option>
+				                </div>		                
+				            </select>
+
+				            <h2>Your SCCA Class:</h2>
+				            <select id="car_subclass">
+				                <option value="" disabled selected>Enter class</option>
+				            </select>
+				            <p id="cl_num" class="note">Index number: </p>
+				            
+				            <h2>Enter your time:<span class="note"><br />(if you've run)</span></h2>
+				            <input type="text" id="time" name="Run Time" default="your race time" disabled="true">
+					    </article>
+			        	<article id="compinputs" class="col-xs-12 col-sm-6 col2">
+				            <h2>Competitor's Class Category:</h2>
+				            <select id="comp_class">
+				                <option value="" disabled selected>Enter class</option>
+				                <div class="comp_classlist">
+				                    <option class="comp_classlist" value="street">Street</option>
+				                    <option class="comp_classlist" value="street_touring">Street Touring</option>
+				                    <option class="comp_classlist" value="street_prepared">Street Prepared</option>
+				                    <option class="comp_classlist" value="cam">CAM</option>
+				                    <option class="comp_classlist" value="prepared">Prepared</option>
+				                    <option class="comp_classlist" value="street_mod">Street Mod</option>
+				                    <option class="comp_classlist" value="mod">Mod</option>
+				                    <option class="comp_classlist" value="junior">Junior</option>
+				                </div>
+
+				            </select>
+				            <h2>Competitor's SCCA Class:</h2>
+				            <select id="comp_subclass">
+				                <option value="">Enter class</option>
+				            </select>
+				            <p id="comp_num" class="note">Index number: </p>
+				            
+				            <h2>Competitor's time:<span class="note"><br />(if he/she has run)</span></h2>
+				            <input type="text" id="comp_time" name="Run Time:" disabled="true">
+				        </article>
+				    </section>
+				    <section class="row">
+				        <article class="col-xs-12" id="compare">
+				            <button type="button" id="add-comp">Compare to Another Racer</button><br>
+				            <button type="button" class="see-equiv">Compare to All Classes</button>
+				        </article>
+				    </section>
+		        </form>
+		        <section class="row">
+			        <article id="results" class="col-xs-12">
+				        <h2>Results</h2>
+				        <p id="resultComment">&nbsp;</p>
+				        <button type="button" class="see-equiv">Compare to All Classes</button>
+			        </article>
+			    </section>
+	        </main>
+	    </section>
+    
+    
+    	<section class="row">
+    		<main class="main2 col-xs-8 col-xs-offset-2">
+
+	        <h2>Your Time Equivalents</h2>
+
+	        <div class="row">
+	        
+		        <div id="index_table" class="col-xs-12 col-md-6">
+		        
+		        </div>
+	        
+		        <div id="index_table2" class="col-xs-12 col-md-6">
+		            
+		        </div>
+	        </main>
+        </section>
+    </div>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script type='text/javascript' src="theScript.js"></script>
     <script>
@@ -26,103 +129,6 @@
         ga('create', 'UA-59521615-1', 'auto');
         ga('send', 'pageview');
     </script>
-    <link rel="stylesheet" type="text/css" href="racestyle.css">
-</head>
-
-<body>
-    <div class="header"><img src="name.jpg" id="logo">
-    </div>
-    <br />
-    <div class="main">
-        <h1>SCCA RTP Calculator</h1>
-        <form id="cat">
-           
-        <div id="userinputs" class="col1">
-            <h2>Your SCCA Class Category:</h2>
-            <select id="car_class">
-                <option value="" disabled selected>Enter class</option>
-                <div class="classlist">
-                    <option class="classlist" value="street">Street</option>
-                    <option class="classlist" value="street_touring">Street Touring</option>
-                    <option class="classlist" value="street_prepared">Street Prepared</option>
-                    <option class="classlist" value="cam">CAM</option>
-                    <option class="classlist" value="prepared">Prepared</option>
-                    <option class="classlist" value="street_mod">Street Mod</option>
-                    <option class="classlist" value="mod">Mod</option>
-                    <option class="classlist" value="junior">Junior</option>
-                </div>
-                
-            </select>
-            <h2>Your SCCA Class:</h2>
-
-            <select id="car_subclass">
-                <option value="" disabled selected>Enter class</option>
-            </select><p id="cl_num" class="note">Index number: </p>
-            
-            <h2>Enter your time:<span class="note"><br />(if you've run)</span></h2>
-            <input type="text" id="time" name="Run Time" default="your race time" disabled="true">
-        <div id="compare">
-            <button type="button" id="add-comp">Compare to Another Racer</button><br>
-            <button type="button" class="see-equiv">Compare to All Classes</button>
-        </div>
-        </div>
-
-        <div id="compinputs" class="col2">
-            <h2>Competitor's Class Category:</h2>
-            <select id="comp_class">
-                <option value="" disabled selected>Enter class</option>
-                <div class="comp_classlist">
-                    <option class="comp_classlist" value="street">Street</option>
-                    <option class="comp_classlist" value="street_touring">Street Touring</option>
-                    <option class="comp_classlist" value="street_prepared">Street Prepared</option>
-                    <option class="comp_classlist" value="cam">CAM</option>
-                    <option class="comp_classlist" value="prepared">Prepared</option>
-                    <option class="comp_classlist" value="street_mod">Street Mod</option>
-                    <option class="comp_classlist" value="mod">Mod</option>
-                    <option class="comp_classlist" value="junior">Junior</option>
-                </div>
-
-            </select>
-            <h2>Competitor's SCCA Class:</h2>
-            <select id="comp_subclass">
-                <option value="">Enter class</option>
-            </select>
-            <p id="comp_num" class="note">Index number: </p>
-            
-            <h2>Competitor's time:<span class="note"><br />(if he/she has run)</span></h2>
-            <input type="text" id="comp_time" name="Run Time:" disabled="true">
-
-            
-        </div>
-
-        </form>
-
-        <div id="final">
-
-            <h2>Results</h2>
-            <p id="resultComment">&nbsp;</p>
-            <button type="button" class="see-equiv">Compare to All Classes</button>
-
-
-        </div>
-
-    </div>
-    
-    
-    <div class="main2">
-        <h2>Your Time Equivalents</h2>
-        
-        <div id="index_table" class="col1">
-        
-        </div>
-        
-        <div id="index_table2" class="col2">
-            
-        </div>
-    
-    
-    
-    </div>
 </body>
 
 </html>
