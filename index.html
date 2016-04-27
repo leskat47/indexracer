@@ -26,7 +26,7 @@
 		        	</article>
 		        </section>
 		        <form id="cat">
-		        	<section class="row" ng-controller="StaticCtrl">
+		        	<section class="row" ng-controller="IndexCtrl">
 			        	<article id="userinputs" class="col-xs-12 col-sm-6 col-md-5 col-md-offset-1">
 				            <h2>Your SCCA Class Category:</h2>
 				            <div>
@@ -46,7 +46,7 @@
 				            <h2>Your time:<span class="note"><br />(if you've run)</span></h2>
 				            <input ng-disabled="!index" ng-model="indexedTime" type="text" id="time" name="Run Time" default="your race time">
 					    </article>
-			        	<article id="compinputs" class="col-xs-12 col-sm-6 col-md-5">
+			        	<article id="compinputs" class="col-xs-12 col-sm-6 col-md-5" ng-show="comp">
 				            <h2>Competitor's Class Category:</h2>
 				            <div>
 						        <select id="comp_category" ng-model="comp_classes" ng-options="comp_category for (comp_category, comp_classes) in categories">
@@ -64,30 +64,23 @@
 					            <h2>Competitor'a time:<span class="note"><br />(if they've run)</span></h2>
 					            <input type="text" id="time" name="Run Time" default="your race time"ng-disabled="!comp_index" ng-model="comp_index_time">
 
-				            <!-- <h2>Competitor's SCCA Class:</h2>
-				            <select id="comp_subclass">
-				                <option value="">Enter class</option>
-				            </select>
-				            <p id="comp_num" class="note">Index number: </p>
-				            
-				            <h2>Competitor's time:<span class="note"><br />(if he/she has run)</span></h2>
-				            <input type="text" id="comp_time" name="Run Time:" disabled="true">
 				        </article>
 				    </section>
 				    <section class="row">
 				        <article class="col-xs-12" id="compare">
-				            <button type="button" id="add-comp">Compare to Another Racer</button><br>
-				            <button type="button" class="see-equiv">Compare to All Classes</button>
-				        </article> -->
+				            <button type="button" ng-click="comp=true">Compare to Another Racer</button><br>
+				            
+				            <!-- <button type="button" class="see-equiv">Compare to All Classes</button> -->
+				        </article>
 				    </section>
 		        </form>
-		        <!-- <section class="row">
+		        <section class="row">
 			        <article id="results" class="col-xs-12">
-				        <h2 class="result">Results</h2>
+<!-- 				        <h2 class="result">Results</h2>
 				        <p id="resultComment">&nbsp;</p>
-				        <button type="button" class="see-equiv">Compare to All Classes</button>
+ -->				        <button type="button" class="see-equiv">Compare to All Classes</button>
 			        </article>
-			    </section> -->
+			    </section>
 	        </main>
 	    </section>
     

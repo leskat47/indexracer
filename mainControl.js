@@ -1,5 +1,5 @@
     var app = angular.module('myApp', []);
-  	app.controller('StaticCtrl', function($scope) {
+  	app.controller('IndexCtrl', function($scope) {
 	    $scope.categories= {
 	        'Street': {
 	            'SS': 0.835,
