@@ -40,7 +40,10 @@ button {
     border-radius: 4px;
     }
 
-
+.placeholder {
+    color: gray;
+    font-style: italic;
+}
 @media (min-width: 500px) {
    .main {
         background-color: #CCCCCC;

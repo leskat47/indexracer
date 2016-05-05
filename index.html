@@ -10,12 +10,14 @@
     <meta name="robots" content="index, follow" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="racestyle.css">
+    <script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <script src = "MainController.js"></script>
 </head>
 
 <body>
     <div class="header"><img src="name.jpg" id="logo">
     </div>
-    <div class="container">
+    <div class="container" ng-app = "racerApp" ng-controller = "StaticCtrl">
     	<section class="row">
     		<main class="main col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
     			<section class="row">
@@ -27,53 +29,33 @@
 		        	<section class="row">
 			        	<article id="userinputs" class="col-xs-12 col-sm-6 col-md-5 col-md-offset-1">
 				            <h2>Your SCCA Class Category:</h2>
-				            <select id="car_class">
-				                <option value="" disabled selected>Enter class</option>
-				                <div class="classlist">
-				                    <option class="classlist" value="street">Street</option>
-				                    <option class="classlist" value="street_touring">Street Touring</option>
-				                    <option class="classlist" value="street_prepared">Street Prepared</option>
-				                    <option class="classlist" value="cam">CAM</option>
-				                    <option class="classlist" value="prepared">Prepared</option>
-				                    <option class="classlist" value="street_mod">Street Mod</option>
-				                    <option class="classlist" value="mod">Mod</option>
-				                    <option class="classlist" value="junior">Junior</option>
-				                </div>		                
-				            </select>
+				                <select ng-model="selectedCar" ng-options="cat for (cat, class) in categories">
+                                    <option value="" class="placeholder" disabled selected> Your Category </option>            
+                                </select>
 
 				            <h2>Your SCCA Class:</h2>
-				            <select id="car_subclass">
-				                <option value="" disabled selected>Enter class</option>
-				            </select>
-				            <p id="cl_num" class="note">Index number: </p>
+				                <select ng-model='selectedClass' ng-options="class for (class, index) in selectedCar">
+                                    <option value="" class="placeholder" disabled selected> Your Class </option>            
+                                </select>
+
+				            <p id="cl_num" class="note">Index number: {{selectedClass}}</p>
 				            
 				            <h2>Enter your time:<span class="note"><br />(if you've run)</span></h2>
-				            <input type="text" id="time" name="Run Time" default="your race time" disabled="true">
+				            <input ng-disabled='!selectedClass' ng-model="myIndex" type="text" id="time" name="Run Time" default="your race time">
 					    </article>
 			        	<article id="compinputs" class="col-xs-12 col-sm-6 col-md-5">
 				            <h2>Competitor's Class Category:</h2>
-				            <select id="comp_class">
-				                <option value="" disabled selected>Enter class</option>
-				                <div class="comp_classlist">
-				                    <option class="comp_classlist" value="street">Street</option>
-				                    <option class="comp_classlist" value="street_touring">Street Touring</option>
-				                    <option class="comp_classlist" value="street_prepared">Street Prepared</option>
-				                    <option class="comp_classlist" value="cam">CAM</option>
-				                    <option class="comp_classlist" value="prepared">Prepared</option>
-				                    <option class="comp_classlist" value="street_mod">Street Mod</option>
-				                    <option class="comp_classlist" value="mod">Mod</option>
-				                    <option class="comp_classlist" value="junior">Junior</option>
-				                </div>
-
-				            </select>
+				            <select ng-model="selectedCompCar" ng-options="cat for (cat, class) in categories">
+                                <option value="" class="placeholder" disabled selected> Your Category </option>              
+                            </select>
 				            <h2>Competitor's SCCA Class:</h2>
-				            <select id="comp_subclass">
-				                <option value="">Enter class</option>
-				            </select>
-				            <p id="comp_num" class="note">Index number: </p>
+				            <select ng-model='selectedCompClass' ng-options="class for (class, index) in selectedCompCar">
+                                <option value="" class="placeholder" disabled selected> Your Category </option>              
+                            </select>
+				            <p id="comp_num" class="note">Index number: {{selectedCompClass}}</p>
 				            
 				            <h2>Competitor's time:<span class="note"><br />(if he/she has run)</span></h2>
-				            <input type="text" id="comp_time" name="Run Time:" disabled="true">
+				            <input ng-disabled='!selectedCompClass' type="text" id="comp_time" name="Run Time:" disabled="true">
 				        </article>
 				    </section>
 				    <section class="row">
@@ -84,7 +66,7 @@
 				    </section>
 		        </form>
 		        <section class="row">
-			        <article id="results" class="col-xs-12">
+			        <article ng-show="myIndex" id="results" class="col-xs-12">
 				        <h2 class="result">Results</h2>
 				        <p id="resultComment">&nbsp;</p>
 				        <button type="button" class="see-equiv">Compare to All Classes</button>
@@ -94,7 +76,7 @@
 	    </section>
     
     
-    	<section class="row">
+    	<section class="row" ng-show="selectedClass">
     		<main class="main2 col-xs-8 col-xs-offset-2">
 
 	        <h2>Your Time Equivalents</h2>
@@ -111,8 +93,8 @@
 	        </main>
         </section>
     </div>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script type='text/javascript' src="theScript.js"></script>
+    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> -->
+    <!-- <script type='text/javascript' src="theScript.js"></script> -->
     <script>
         (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r;
