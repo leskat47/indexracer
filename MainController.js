@@ -1,5 +1,13 @@
     var app = angular.module('racerApp', []);
   	app.controller('StaticCtrl', function($scope) {
+  		$scope.viewComp = True;
+  		$scope.changeViewComp=function(){
+  			if $scope.viewComp ===False {
+  				$scope.viewComp = True;
+  			} else {
+  				$scope.viewComp = False;
+  			}
+  		}
 	    $scope.categories= {
 	        'Street': {
 	            'SS': 0.835,
