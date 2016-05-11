@@ -1,5 +1,13 @@
-    var app = angular.module('racerApp', []);
-  	app.controller('StaticCtrl', function($scope) {
+    var app = angular.module('racerApp', ['ngRoute']);
+    
+    app.controller('MainController', function($scope, $route, $routeParams, $location) {
+	     $scope.$route = $route;
+	     $scope.$location = $location;
+	     $scope.$routeParams = $routeParams;
+ 	});
+
+ 	app.controller('SoloCtrl', function($scope, $routeParams) {
+     	$scope.name = "SoloController";
   		$scope.viewComp = True;
   		$scope.changeViewComp=function(){
   			if $scope.viewComp ===False {
@@ -89,4 +97,15 @@
         		"JC": 0.734
         	}
 	    };
+	});
+	app.config(function($routeProvider, $locationProvider) {
+	  $routeProvider
+	   .when('/:solo', {
+	    templateUrl: 'solo.html',
+	    controller: 'SoloController',
+	    }
+	  });
+
+	  // configure html5 to get links working on jsfiddle
+	  $locationProvider.html5Mode(true);
 	});
