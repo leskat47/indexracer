@@ -1,10 +1,26 @@
-    var app = angular.module('racerApp', []);
+console.log("controller")
+var app = angular.module('racerApp', []);
+    // // Thinking about routes. Would need to add ngRoute to dependencies
 
+    // app.config(['$routeProvider'],
+    // 	function($routeProvider) {
+    // 		$routeProvider
+    // 		  .when ('/racer', {
+    // 		  	templateUrl: 'template.html',
+    // 		  	controller: 'SoloCtrl',
+    // 		  })
+    // 		  .when ('/prosolo', {
+    // 		  	templateUrl: 'template.html',
+    // 		  	controller: 'ProSoloCtrl'
+    // 		  })
+    // 		  .otherwise({
+    // 		  	redirectTo: '/racer'
+    // 		  });
+    // 	}]);
 
 
 
   	app.controller('SoloCtrl', ['$scope', function($scope) {
-  		$scope.message = "HIIIIIIII"
   		// $scope.$log = $log;
   		$scope.myTime = "";
   		$scope.viewComp = false;
