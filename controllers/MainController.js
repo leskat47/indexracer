@@ -62,7 +62,6 @@ var app = angular.module('racerApp', []);
 		  	$scope.sourceText = $scope.toggle ? "ProSolo Indices": "Solo Indices";
 	        $scope.toggleText = $scope.toggle ? 'Switch to Solo': 'Switch to ProSolo';
 	    	$scope.categories = $scope.toggle ? ProSoloCategories : soloCategories;
-
 	    })
 
 
@@ -189,83 +188,77 @@ soloCategories = {
 
 ProSoloCategories = {
     'Street': {
-        'SS': 1,
-        'AS': 1,
-        "BS": 1,
-		"CS": 0.819, 
-		"DS": 0.811,
-		"ES": 0.807,
-		"FS": 0.814,
-		"GS": 0.806, 
-		"HS": 0.798, 
-		"HCS": 0.817,
-		"SSR": 0.860
+        'SS': 0.815,
+        'AS': 0.813,
+        "BS": 0.807,
+		"CS": 0.792, 
+		"DS": 0.788,
+		"ES": 0.782,
+		"FS": 0.790,
+		"GS": 0.779, 
+		"HS": 0.768, 
+		"SSR": 0.855
     },
     'Street Touring': {
-        "STF": 0.809,
-		"STS": 0.832,
-		"STX": 0.836,
-		"STR": 0.841,
-		"STU": 0.845,
-		"STP": 0.837
+        "STF": 0.789,
+		"STS": 0.799,
+		"STX": 0.809,
+		"STR": 0.819,
+		"STU": 0.823,
+		"STP": 0.811
     },
     'Street Prepared': {
-    	"SSP": 0.872, 
-		"ASP": 0.865, 
-		"BSP": 0.863, 
-		"CSP": 0.867, 
-		"DSP": 0.855,
-		"ESP": 0.852,
-		"FSP": 0.840
+    	"SSP": 0.871, 
+		"ASP": 0.868, 
+		"BSP": 0.858, 
+		"CSP": 0.861, 
+		"DSP": 0.848,
+		"ESP": 0.845,
+		"FSP": 0.818
     },
     "CAM Options": {
-		"CAM-C": 0.830,
-		"CAM-T": 0.834,
-		"CAM-S": 0.848
+		"CAM-C": 0.816,
+		"CAM-T": 0.805,
+		"CAM-S": 0.822
 	},
 	"Prepared Options": {
-		"XP": 0.907,
-		"BP": 0.883,
-		"CP": 0.864,
-		"DP": 0.879,
-		"EP": 0.871,
-		"FP": 0.880,
-		"HCR": 0.838
+		"XP": 0.904,
+		"CP": 0.856,
+		"DP": 0.870,
+		"EP": 0.863,
+		"FP": 0.873,
 	},
 	"CAM Options": {
-		"CAM-C": 0.830,
-		"CAM-T": 0.834,
-		"CAM-S": 0.848
+		"CAM-C": 0.816,
+		"CAM-T": 0.805,
+		"CAM-S": 0.822
 	},
 	"Prepared Options": {
-		"XP": 0.907,
-		"BP": 0.883,
-		"CP": 0.864,
-		"DP": 0.879,
-		"EP": 0.871,
-		"FP": 0.880,
-		"HCR": 0.838
+		"XP": 0.904,
+		"CP": 0.856,
+		"DP": 0.870,
+		"EP": 0.863,
+		"FP": 0.873,
 	},
 	"Street Mod Options": {
-		"SMF": 0.861,
-		"SM": 0.870,
-		"SSM": 0.882
+		"SMF": 0.859,
+		"SM": 0.872,
+		"SSM": 0.881
 	},
-
 	"Mod Options": {
 		"AM": 1,
-		"BM": 0.966,
-		"CM": 0.916,
-		"DM": 0.919,
-		"EM": 0.920,
-		"FM": 0.926,
-		"FSAE": 0.982,
-		"KM": 0.954
+		"BM": 0.955,
+		"CM": 0.896,
+		"DM": 0.920,
+		"EM": 0.922,
+		"FM": 0.924,
+		"FSAE": 0.958,
+		"KM": 0.934
 	},
 	"Junior Options": {
-		"JA": 0.878,
-		"JB": 0.842,
-		"JC": 0.734
+		"JA": 0.821,
+		"JB": 0.781,
+		"JC": 0.717
 	}
 };
 
