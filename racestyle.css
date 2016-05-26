@@ -85,8 +85,8 @@ button {
 
     #compare {
         position: absolute;
-        bottom: 20px;
-        height: 72px;
+        bottom: 10px;
+        height: 40px;
         left: auto;
         right: auto;
         text-align: center;  

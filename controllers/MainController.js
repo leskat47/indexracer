@@ -26,7 +26,8 @@ var app = angular.module('racerApp', []);
 		$scope.$log = $log;
 		$scope.myTime = "";
 		$scope.viewComp = false;
-		$scope.categories = soloCategories;
+		$scope.categories = ProSoloCategories;
+		$log.log($scope.categories)
 		
 		$scope.changeViewComp=function(){
 			if ($scope.viewComp == false) {
@@ -55,17 +56,15 @@ var app = angular.module('racerApp', []);
 			$scope.compTime="";
 		}
 
-		$scope.switchSolo = function(){
-	  		$scope.clearVals();
-	  		$scope.clearCompVals();
-	  		if ($scope.categories === soloCategories) {
-	  			$scope.categories = ProSoloCategories;
-	  			$log.log( "Now in pro");
-	  		} else {
-	  			$scope.categories = soloCategories;
-	  			$log.log("Now in solo");
-	  		}
-  		}
+		$scope.$watch('toggle', function(){
+			$scope.clearVals();
+		  	$scope.clearCompVals();
+		  	$scope.sourceText = $scope.toggle ? "ProSolo Indices": "Solo Indices";
+	        $scope.toggleText = $scope.toggle ? 'Switch to Solo': 'Switch to ProSolo';
+	    	$scope.categories = $scope.toggle ? ProSoloCategories : soloCategories;
+
+	    })
+
 
 		$scope.$watchGroup(['selectedClass', 'myTime', 'selectedCompClass', 'compTime'], 
 			function(newVal, oldVal){
