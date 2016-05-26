@@ -18,13 +18,14 @@
 <body ng-app = "racerApp" ng-controller = "SoloCtrl" class="container-fluid">
     <div class="header row"><img src="name.jpg" id="logo">
     </div>
-    <button ng-click="toggle = !toggle">{{toggleText}}</button>
+    
     <section class="row">
         <main class="main col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3">
             <section class="row">
                 <article class="col-xs-12">
                     <h1>SCCA RTP Calculator</h1>
                     <h3>{{ sourceText }}</h3>
+                    <div class="center"><button ng-click="toggle = !toggle">{{toggleText}}</button></div>
                 </article>
             </section>
             <form id="cat">
@@ -64,7 +65,7 @@
                     </article>
                 </section>
                 <section class="row">
-                    <article class="col-xs-12" id="compare">
+                    <article class="col-xs-12" class="center">
                         <button type="button" ng-click="changeViewComp()" ng-show="!viewComp">Compare to Another Racer</button><br>
                     </article>
                 </section>
