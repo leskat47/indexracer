@@ -81,7 +81,11 @@
         <main class="main2 col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-4">
         <h2>Your Time Equivalents</h2>
         <div class="row">
-            <div id="index_table" class="col-xs-12 col-md-6" ng-repeat="(class, index) in selectedCat">{{ class }}: {{ index }}
+            <div class="col-xs-12 col-md-6" ng-repeat="(cat, cls) in categories">
+                <p><b>{{ cat }}</b>
+                <div id="index_table" ng-repeat="(class, index) in cls">{{ class }}: {{ (myTime * selectedClass)/index | number:2}}
+                </div>
+                </p>
             </div>
 
         </main>

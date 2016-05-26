@@ -26,8 +26,7 @@ var app = angular.module('racerApp', []);
 		$scope.$log = $log;
 		$scope.myTime = "";
 		$scope.viewComp = false;
-		$scope.categories = ProSoloCategories;
-		$log.log($scope.categories)
+		$scope.Math = window.Math;
 		
 		$scope.changeViewComp=function(){
 			if ($scope.viewComp == false) {
@@ -135,12 +134,12 @@ soloCategories = {
 		"ESP": 0.852,
 		"FSP": 0.840
     },
-    "CAM Options": {
+    "CAM": {
 		"CAM-C": 0.830,
 		"CAM-T": 0.834,
 		"CAM-S": 0.848
 	},
-	"Prepared Options": {
+	"Prepared": {
 		"XP": 0.907,
 		"BP": 0.883,
 		"CP": 0.864,
@@ -149,12 +148,12 @@ soloCategories = {
 		"FP": 0.880,
 		"HCR": 0.838
 	},
-	"CAM Options": {
+	"CAM": {
 		"CAM-C": 0.830,
 		"CAM-T": 0.834,
 		"CAM-S": 0.848
 	},
-	"Prepared Options": {
+	"Prepared": {
 		"XP": 0.907,
 		"BP": 0.883,
 		"CP": 0.864,
@@ -163,13 +162,13 @@ soloCategories = {
 		"FP": 0.880,
 		"HCR": 0.838
 	},
-	"Street Mod Options": {
+	"Street Mod": {
 		"SMF": 0.861,
 		"SM": 0.870,
 		"SSM": 0.882
 	},
 
-	"Mod Options": {
+	"Mod": {
 		"AM": 1,
 		"BM": 0.966,
 		"CM": 0.916,
@@ -179,7 +178,7 @@ soloCategories = {
 		"FSAE": 0.982,
 		"KM": 0.954
 	},
-	"Junior Options": {
+	"Junior": {
 		"JA": 0.878,
 		"JB": 0.842,
 		"JC": 0.734
@@ -216,36 +215,36 @@ ProSoloCategories = {
 		"ESP": 0.845,
 		"FSP": 0.818
     },
-    "CAM Options": {
+    "CAM": {
 		"CAM-C": 0.816,
 		"CAM-T": 0.805,
 		"CAM-S": 0.822
 	},
-	"Prepared Options": {
+	"Prepared": {
 		"XP": 0.904,
 		"CP": 0.856,
 		"DP": 0.870,
 		"EP": 0.863,
 		"FP": 0.873,
 	},
-	"CAM Options": {
+	"CAM": {
 		"CAM-C": 0.816,
 		"CAM-T": 0.805,
 		"CAM-S": 0.822
 	},
-	"Prepared Options": {
+	"Prepared": {
 		"XP": 0.904,
 		"CP": 0.856,
 		"DP": 0.870,
 		"EP": 0.863,
 		"FP": 0.873,
 	},
-	"Street Mod Options": {
+	"Street Mod": {
 		"SMF": 0.859,
 		"SM": 0.872,
 		"SSM": 0.881
 	},
-	"Mod Options": {
+	"Mod": {
 		"AM": 1,
 		"BM": 0.955,
 		"CM": 0.896,
@@ -255,7 +254,7 @@ ProSoloCategories = {
 		"FSAE": 0.958,
 		"KM": 0.934
 	},
-	"Junior Options": {
+	"Junior": {
 		"JA": 0.821,
 		"JB": 0.781,
 		"JC": 0.717
