@@ -3,7 +3,7 @@
 }
 
 body {
-    background-image: url("trackbackground.jpg");
+    background-image: url("static/trackbackground.jpg");
     font-family: "Verdana", "Arial", sans-serif;
     font-size: 12px;
 }
@@ -35,7 +35,7 @@ h3 {
 }
 
 div.header {
-    background-image: url("tracks.jpg");
+    background-image: url("static/tracks.jpg");
     height: 80px;
     padding: 20px 0px 100px 0px;
     vertical-align: top;
