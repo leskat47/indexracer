@@ -10,15 +10,13 @@
     <meta name="robots" content="index, follow" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="racestyle.css">
-    <script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
-    <script src = "http:/ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.js"></script>
-    <script src ="controllers/MainController.js"></script>
+
 </head>
 
 <body ng-app = "racerApp" ng-controller = "SoloCtrl" class="container-fluid">
-    <div class="header row"><img src="name.jpg" id="logo">
+    <div class="header row"><img src="static/name.jpg" id="logo">
     </div>
-    
+
     <section class="row">
         <main class="main col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3">
             <section class="row">
@@ -32,15 +30,15 @@
                 <section class="row">
                     <article id="userinputs" class="col-xs-12 col-sm-6 col-md-5 col-md-offset-1">
                         <h2>Your SCCA Class Category:</h2>
-                            <select ng-model="selectedCat" ng-options="cat for (cat, class) in categories" ng-change="clearSubVals()">
+                            <select ng-model="selectedCat" ng-options="cat for (cat, class) in categories" ng-change="clearSubVals(); setCatCookie()">
                                 <option value="" class="placeholder" disabled selected> Your Category </option>
                             </select>
                         <h2>Your SCCA Class:</h2>
-                            <select ng-model='selectedClass' ng-options="class for (class, index) in selectedCat">
+                            <select ng-model='selectedClass' ng-options="class for (class, index) in selectedCat" ng-change="setClassCookie()">
                                 <option value="" class="placeholder" disabled selected> Your Class </option>
                             </select>
                         <p id="cl_num" class="note">Index number: <span ng-cloak>{{selectedClass}}</span></p>
-                        
+
                         <h2>Enter your time:<span class="note"><br />(if you've run)</span></h2>
                         <input ng-disabled='!selectedClass' ng-model="myTime" type="text" id="time" name="Run Time" default="your race time">
                         <br>
@@ -49,14 +47,14 @@
                     <article id="compinputs" class="col-xs-12 col-sm-6 col-md-5" ng-show="viewComp" ng-cloak>
                         <h2>Competitor's Class Category:</h2>
                         <select ng-model="selectedCompCat" ng-options="cat for (cat, class) in categories">
-                            <option value="" class="placeholder" disabled selected> Category </option>              
+                            <option value="" class="placeholder" disabled selected> Category </option>
                         </select>
                         <h2>Competitor's SCCA Class:</h2>
                         <select ng-model='selectedCompClass' ng-options="class for (class, index) in selectedCompCat">
-                            <option value="" class="placeholder" disabled selected> Class </option>              
+                            <option value="" class="placeholder" disabled selected> Class </option>
                         </select>
                         <p id="comp_num" class="note">Index number: {{selectedCompClass}}</p>
-                        
+
                         <h2>Competitor's time:<span class="note"><br />(if he/she has run)</span></h2>
                         <input ng-disabled='!selectedCompClass' ng-model="compTime" type="text" id="comp_time" name="Run Time:" disabled="true">
                         <br>
@@ -91,6 +89,10 @@
 
         </main>
     </section>
+    <script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script src = "http:/ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.js"></script>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular-cookies.js"></script>
+    <script src ="controllers/MainController.js"></script>
     <script>
         (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r;
