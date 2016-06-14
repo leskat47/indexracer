@@ -7,4 +7,4 @@ Landing page on small screen:
 <img src="static/ir.png">
 
 After data is entered, time equivalents show: 
-<img src="static/ir2.png"
+<img src="static/ir2.png">
