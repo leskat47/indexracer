@@ -10,7 +10,7 @@
     <meta name="robots" content="index, follow" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="racestyle.css">
-
+    <!-- <script src="controllers/index-data.js"> -->
 </head>
 
 <body ng-app = "racerApp" ng-controller = "SoloCtrl" class="container-fluid">
@@ -81,12 +81,12 @@
         <h2>Your Time Equivalents</h2>
         <div class="row">
             <div class="col-xs-12 col-md-6" ng-repeat="(cat, cls) in categories">
-                <p><b>{{ cat }}</b>
-                <div id="index_table" ng-repeat="(class, index) in cls">{{ class }}: {{ (myTime * selectedClass)/index | number:3}}
+                <p><h2>{{ cat }}</h2>
+                <div id="index_table" ng-repeat="(class, index) in cls">{{ class }}: {{ (myTime * selectedClass)/index | number:3}}&nbsp;
                 </div>
                 </p>
             </div>
-
+        </div>
         </main>
     </section>
     <script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>

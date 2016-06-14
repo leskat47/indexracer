@@ -98,7 +98,7 @@ button {
         height: 40px;
         left: auto;
         right: auto;
-        text-align: center;  
+        text-align: center;
     }*/
 
     .main2 {
@@ -121,7 +121,7 @@ button {
     }
 }
 
-    
+
 @media (max-width: 550px) {
 
   .main {
@@ -129,7 +129,7 @@ button {
         padding: 5px;
         border-radius: 10px;
         box-shadow: 5px 5px 5px #888888;
-    
+
   }
     #logo {
         float: right;
@@ -147,7 +147,7 @@ button {
         position: relative;
         text-align: center;
     }
-    
+
    h1 {
         background-color: #FFFFFF;
         width: 50%;
@@ -167,14 +167,11 @@ button {
         padding-left: 30px;
     }
 
-
     #index_table {
-        float: left
-    }
-    #index_table2{
-        float:right;
+        float: left;
         padding-right: 20px;
     }
+
 
     #resultComment{
         width: 200px;
@@ -204,5 +201,3 @@ button {
     font-style: italic;
     font-weight: 100;
 }
-
-
