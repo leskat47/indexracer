@@ -159,13 +159,16 @@ app.controller('SoloCtrl', ['$scope', '$log', '$cookies', function ctrl($scope, 
   $scope.$log = $log;
   $scope.myTime = '';
   $scope.viewComp = false;
-  $scope.Math = window.Math;
-  $scope.selectedCat = $cookies.get('Category');
+  // $scope.Math = window.Math;
+  $scope.selectedCat = $cookies.getObject('Category');
   $scope.selectedClass = $cookies.get('Class');
   $log.log($scope.selectedCat);
-  $log.log($scope.selectedClass);
+  // $scope.selectedClass = $cookies.get('Clsass');
+  // $scope.categories = soloCategories;
+  // $log.log($scope.selectedCatId);
+  // $log.log($scope.categories.selectedCatId);
 
-  $scope.changeViewComp = function () {
+  $scope.changeViewComp = function changeViewComp() {
     if ($scope.viewComp === false) {
       $scope.viewComp = true;
     } else {
@@ -173,19 +176,19 @@ app.controller('SoloCtrl', ['$scope', '$log', '$cookies', function ctrl($scope, 
       $scope.viewComp = false;
     }
   };
-  $scope.clearVals = function () {
+  $scope.clearVals = function clearVals() {
     $scope.selectedCat = '';
     $scope.clearSubVals();
   };
-  $scope.clearSubVals = function () {
+  $scope.clearSubVals = function clearSubVals() {
     $scope.selectedClass = '';
     $scope.myTime = '';
   };
-  $scope.clearCompVals = function () {
+  $scope.clearCompVals = function clearCompVals() {
     $scope.selectedCompCat = '';
     $scope.clearCompSubVals();
   };
-  $scope.clearCompSubVals = function () {
+  $scope.clearCompSubVals = function clearCompSubVals() {
     $scope.selectedCompClass = '';
     $scope.compTime = '';
   };
@@ -199,12 +202,8 @@ app.controller('SoloCtrl', ['$scope', '$log', '$cookies', function ctrl($scope, 
   });
 
 // COOKIES
-  $scope.setCatCookie = function () {
-  // $log.log('Incoming' + newVal)
-    $cookies.put('Category', $scope.selectedCat);
-    $log.log('cookie put');
-    let cookieCategory = $cookies.get('Category');
-    $log.log(`My cookie is ${cookieCategory}`);
+  $scope.setCatCookie = function setCatCookie() {
+    $cookies.putObject('Category', $scope.selectedCat);
   };
 
   $scope.setClassCookie = function () {

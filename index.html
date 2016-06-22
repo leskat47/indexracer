@@ -30,12 +30,13 @@
                 <section class="row">
                     <article id="userinputs" class="col-xs-12 col-sm-6 col-md-5 col-md-offset-1">
                         <h2>Your SCCA Class Category:</h2>
+                            {{ selectedCat }}
                             <select ng-model="selectedCat" ng-options="cat for (cat, class) in categories" ng-change="clearSubVals(); setCatCookie()">
-                                <option value="" class="placeholder" disabled selected> Your Category </option>
+                                <option value="" class="placeholder"> Your Category </option>
                             </select>
                         <h2>Your SCCA Class:</h2>
                             <select ng-model='selectedClass' ng-options="class for (class, index) in selectedCat" ng-change="setClassCookie()">
-                                <option value="" class="placeholder" disabled selected> Your Class </option>
+                                <option value="" class="placeholder"> Your Class </option>
                             </select>
                         <p id="cl_num" class="note">Index number: <span ng-cloak>{{selectedClass}}</span></p>
 
@@ -90,7 +91,7 @@
         </main>
     </section>
     <script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
-    <script src = "http:/ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.js"></script>
+    <!-- <script src = "http:/ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.js"></script> -->
     <script src = "https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular-cookies.js"></script>
     <script src ="controllers/MainController.js"></script>
     <script>
