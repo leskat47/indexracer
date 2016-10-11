@@ -30,7 +30,6 @@
                 <section class="row">
                     <article id="userinputs" class="col-xs-12 col-sm-6 col-md-5 col-md-offset-1">
                         <h2>Your SCCA Class Category:</h2>
-                            {{ selectedCat }}
                             <select ng-model="selectedCat" ng-options="cat for (cat, class) in categories" ng-change="clearSubVals(); setCatCookie()">
                                 <option value="" class="placeholder"> Your Category </option>
                             </select>
