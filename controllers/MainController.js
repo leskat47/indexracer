@@ -300,7 +300,7 @@ app.controller('SoloCtrl', ['$scope', '$log', '$cookies', 'Cats', function ctrl(
   $scope.selectedClass = $cookies.get('Class');
   $log.log($scope.selectedCat);
   $cookies.put("test", "test");
-  $log.log("cookie: ", $cookies)
+  $log.log("cookie: ", $cookies.get("test"))
 
   $scope.changeViewComp = function changeViewComp() {
     if ($scope.viewComp === false) {
@@ -337,7 +337,7 @@ app.controller('SoloCtrl', ['$scope', '$log', '$cookies', 'Cats', function ctrl(
 
 // COOKIES
   $scope.setCatCookie = function setCatCookie() {
-    $cookies.putObject('Category', $scope.selectedCat);
+    $cookies.put('Category', $scope.selectedCat);
   };
 
   $scope.setClassCookie = function () {
