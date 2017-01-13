@@ -25,8 +25,8 @@ const app = angular.module('racerApp', ['ngCookies']);
 
 // //////////////////////////////////////////////////////////////////////////
 // Class Index datasets
-app.value('Cats', 
-  {soloCats: 
+app.value('Cats',
+  {soloCats:
     {
       Street: {
         SS: 0.835,
@@ -93,7 +93,7 @@ app.value('Cats',
         JC: 0.734,
       },
     },
-    ProSoloCats: 
+    ProSoloCats:
     {
         Street: {
           SS: 0.815,
@@ -160,16 +160,11 @@ app.value('Cats',
   }
 );
 
-
-
 /* eslint-disable no-param-reassign */
 app.controller('SoloCtrl', ['$scope', '$log', '$cookies', 'Cats', function ctrl($scope, $log, $cookies, Cats) {
   $scope.$log = $log;
   $scope.myTime = '';
   $scope.viewComp = false;
-  $scope.selectedCat = $cookies.getObject('Category');
-  $scope.selectedClass = $cookies.get('Class');
-  $log.log($scope.selectedCat);
   $cookies.put("test", "test");
   $log.log("cookie: ", $cookies.get("test"))
 
@@ -215,6 +210,7 @@ app.controller('SoloCtrl', ['$scope', '$log', '$cookies', 'Cats', function ctrl(
     $cookies.put('Class', $scope.selectedClass);
   };
 
+// Winner or comparable display management
   $scope.$watchGroup(['selectedClass', 'myTime', 'selectedCompClass', 'compTime'],
     function (newVal, oldVal) {
       let compIndex;
