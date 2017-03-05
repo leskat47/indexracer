@@ -161,13 +161,17 @@ app.value('Cats',
 );
 
 /* eslint-disable no-param-reassign */
-app.controller('SoloCtrl', ['$scope', '$log', '$cookies', 'Cats', function ctrl($scope, $log, $cookies, Cats) {
+app.controller('SoloCtrl', ['$scope', '$log', '$cookies', '$location', '$anchorScroll', 'Cats', function ctrl($scope, $log, $cookies, $location, $anchorScroll, Cats) {
   $scope.$log = $log;
   $scope.myTime = '';
   $scope.viewComp = false;
   $cookies.put("test", "test");
   $log.log("cookie: ", $cookies.get("test"))
 
+  $scope.showEquivalents = function(){
+    $location.hash('equivs');
+    $anchorScroll();
+  }
   $scope.changeViewComp = function changeViewComp() {
     if ($scope.viewComp === false) {
       $scope.viewComp = true;
@@ -217,6 +221,7 @@ app.controller('SoloCtrl', ['$scope', '$log', '$cookies', 'Cats', function ctrl(
       let time;
     // If user time is available (we can assume we have the class)
       if ($scope.myTime) {
+        $scope.showEquivalents();
         const myIndex = $scope.selectedClass * $scope.myTime;
         // If competitor time is available, show full results
         if ($scope.compTime) {
