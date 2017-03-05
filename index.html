@@ -41,7 +41,7 @@
                             </select>
                         <p id="cl_num" class="note">Index number: <span ng-cloak>{{selectedClass}}</span></p>
 
-                        <h2 id="equivs" class="anchor">Enter your time:<span class="note"><br />(if you've run)</span></h2>
+                        <h2>Enter your time:<span class="note"><br />(if you've run)</span></h2>
                         <input ng-disabled='!selectedClass' ng-model="myTime" type="text" id="time" name="Run Time" default="your race time">
                         <br>
                         <button type="button" ng-click="clearVals()">Clear</button>
@@ -71,7 +71,7 @@
                     </article>
                 </section>
             </form>
-            <section class="row">
+            <section id="equivs" class="anchor" class="row">
                 <article ng-show="(myTime && selectedCompClass) || (compTime && selectedClass)" id="results" ng-cloak class="col-xs-12">
                     <h2 class="result">Results</h2>
                     <p id="resultComment">{{results}}</p>
