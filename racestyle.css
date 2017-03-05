@@ -68,6 +68,10 @@ button {
     border: solid orange;
 }
 
+h2.cozy {
+    padding-top: 0px;
+    margin-top: 0px;
+}
 @media (min-width: 550px) {
    .main {
         background-color: #CCCCCC;
