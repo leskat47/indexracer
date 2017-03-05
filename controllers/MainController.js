@@ -161,7 +161,7 @@ app.value('Cats',
 );
 
 /* eslint-disable no-param-reassign */
-app.controller('SoloCtrl', ['$scope', '$log', '$cookies', '$location', '$anchorScroll', 'Cats', function ctrl($scope, $log, $cookies, $location, $anchorScroll, Cats) {
+app.controller('SoloCtrl', ['$scope', '$log', '$cookies', '$location', '$anchorScroll', '$window', 'Cats', function ctrl($scope, $log, $cookies, $location, $anchorScroll, $window, Cats) {
   $scope.$log = $log;
   $scope.myTime = '';
   $scope.viewComp = false;
@@ -169,8 +169,10 @@ app.controller('SoloCtrl', ['$scope', '$log', '$cookies', '$location', '$anchorS
   $log.log("cookie: ", $cookies.get("test"))
 
   $scope.showEquivalents = function(){
-    $location.hash('equivs');
-    $anchorScroll();
+    if ($window.innerWidth < 550){
+      $location.hash('equivs');
+      $anchorScroll();
+    }
   }
   $scope.changeViewComp = function changeViewComp() {
     if ($scope.viewComp === false) {
