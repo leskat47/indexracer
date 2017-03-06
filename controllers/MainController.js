@@ -27,71 +27,70 @@ const app = angular.module('racerApp', ['ngCookies']);
 // Class Index datasets
 app.value('Cats',
   {soloCats:
-    {
-      Street: {
-        SS: 0.835,
-        AS: 0.833,
-        BS: 0.826,
-        CS: 0.819,
-        DS: 0.811,
-        ES: 0.807,
-        FS: 0.814,
-        GS: 0.806,
-        HS: 0.798,
-        HCS: 0.817,
-        SSR: 0.860,
-      },
-      'Street Touring': {
-        STF: 0.809,
-        STS: 0.832,
-        STX: 0.836,
-        STR: 0.841,
-        STU: 0.845,
-        STP: 0.837,
-      },
-      'Street Prepared': {
-        SSP: 0.872,
-        ASP: 0.865,
-        BSP: 0.863,
-        CSP: 0.867,
-        DSP: 0.855,
-        ESP: 0.852,
-        FSP: 0.840,
-      },
-      CAM: {
-        'CAM-C': 0.830,
-        'CAM-T': 0.834,
-        'CAM-S': 0.848,
-      },
+      {"Street Touring": {
+        STF: 0.8, 
+        STU: 0.831, 
+        STP: 0.82, 
+        STR: 0.83, 
+        STS: 0.818, 
+        STX: 0.822
+      }, 
+      Modified: {
+        EM: 0.905, 
+        DM: 0.906, 
+        CM: 0.901, 
+        FSAE: 0.966, 
+        BM: 0.956, 
+        AM: 1, 
+        KM: 0.939, 
+        FM: 0.916
+      }, 
       Prepared: {
-        XP: 0.907,
-        BP: 0.883,
-        CP: 0.864,
-        DP: 0.879,
-        EP: 0.871,
-        FP: 0.880,
-        HCR: 0.838,
-      },
-      'Street Mod': {
-        SMF: 0.861,
-        SM: 0.870,
-        SSM: 0.882,
-      },
-      Mod: {
-        AM: 1,
-        BM: 0.966,
-        CM: 0.916,
-        DM: 0.919,
-        EM: 0.920,
-        FM: 0.926,
-        FSAE: 0.982,
-        KM: 0.954,
-      },
+        FP: 0.873, 
+        HCR: 0.825, 
+        BP: 0.869, 
+        XP: 0.892, 
+        CP: 0.854, 
+        EP: 0.859, 
+        DP: 0.865
+      }, 
+      "Street Modified": {
+        SSM: 0.875, 
+        SMF: 0.848, 
+        SM: 0.861
+      }, 
+      Street: {
+        HCS: 0.809, 
+        FS: 0.804, 
+        GS: 0.793, 
+        SS: 0.826, 
+        HS: 0.786, 
+        SSR: 0.847, 
+        AS: 0.819, 
+        BS: 0.813, 
+        CS: 0.81, 
+        DS: 0.801, 
+        ES: 0.794
+      }, 
+      CAM: {
+        "CAM-C": 0.823, 
+        "CAM-S": 0.838, 
+        "CAM-T": 0.817
+      }, 
+        "Street Prepared": {
+          ASP: 0.856, 
+          ESP: 0.837, 
+          BSP: 0.853, 
+          SSP: 0.862, 
+          DSP: 0.842, 
+          FSP: 0.829, 
+          CSP: 0.86
+      }, 
       Junior: {
-        JA: 0.878,
-        JB: 0.842,
-        JC: 0.734,
-      },
+        JA: 0.864, 
+        JB: 0.834, 
+        JC: 0.726
+      }
     },
     ProSoloCats:
     {
