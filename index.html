@@ -20,10 +20,8 @@
     <section class="row">
         <main class="main col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3">
             <section class="row">
-                <article class="col-md-12 hidden sm">
+                <article class="col-md-12">
                     <h1>SCCA RTP Calculator</h1>
-                </article>
-                <article class="col-xs-12">
                     <h3  ng-cloak>{{ sourceText }}</h3>
                     <div class="center"><button ng-click="toggle = !toggle"  ng-cloak>{{toggleText}}</button></div>
                 </article>
@@ -41,7 +39,7 @@
                             </select>
                         <p id="cl_num" class="note">Index number: <span ng-cloak>{{selectedClass}}</span></p>
 
-                        <h2>Enter your time:<span class="note"><br />(if you've run)</span></h2>
+                        <h2 id="equivs" class="anchor">Enter your time:<span class="note"><br />(if you've run)</span></h2>
                         <input ng-disabled='!selectedClass' ng-model="myTime" type="text" id="time" name="Run Time" default="your race time">
                         <br>
                         <button type="button" ng-click="clearVals()">Clear</button>
@@ -71,7 +69,7 @@
                     </article>
                 </section>
             </form>
-            <section id="equivs" class="anchor" class="row">
+            <section class="row">
                 <article ng-show="(myTime && selectedCompClass) || (compTime && selectedClass)" id="results" ng-cloak class="col-xs-12">
                     <h2 class="result">Results</h2>
                     <p id="resultComment">{{results}}</p>
