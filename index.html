@@ -37,9 +37,9 @@
                             <select ng-model='selectedClass' ng-options="class for (class, index) in selectedCat" ng-change="setClassCookie()">
                                 <option value="" class="placeholder"> Your Class </option>
                             </select>
-                        <p id="cl_num" class="note">Index number: <span ng-cloak>{{selectedClass}}</span></p>
+                        <p class="anchor" id="cl_num" class="note">Index number: <span ng-cloak>{{selectedClass}}</span></p>
 
-                        <h2 id="equivs" class="anchor">Enter your time:<span class="note"><br />(if you've run)</span></h2>
+                        <h2>Enter your time:<span class="note"><br />(if you've run)</span></h2>
                         <input ng-disabled='!selectedClass' ng-model="myTime" type="text" id="time" name="Run Time" default="your race time">
                         <br>
                         <button type="button" ng-click="clearVals()">Clear</button>

@@ -170,7 +170,7 @@ app.controller('SoloCtrl', ['$scope', '$log', '$cookies', '$location', '$anchorS
 
   $scope.showEquivalents = function(){
     if ($window.innerWidth < 550){
-      $location.hash('equivs');
+      $location.hash('cl_num');
       $anchorScroll();
     }
   }
