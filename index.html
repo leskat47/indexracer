@@ -20,10 +20,12 @@
     <section class="row">
         <main class="main col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3">
             <section class="row">
-                <article class="col-md-12">
+                <article class="col-md-12" ng-click="clearVals()">
                     <h1>SCCA RTP Calculator</h1>
                     <h3  ng-cloak>{{ sourceText }}</h3>
-                    <div class="center"><button ng-click="toggle = !toggle"  ng-cloak>{{toggleText}}</button></div>
+                    <button class="{{ solo }}" ng-click="setCategories('solo')">SCCA Solo</button>
+                    <button class="{{ prosolo }}" ng-click="setCategories('prosolo')">SCCA ProSolo</button>
+                    <button class="{{ aas }}" ng-click="setCategories('aas')">AAS Solo</button>
                 </article>
             </section>
             <form id="cat">

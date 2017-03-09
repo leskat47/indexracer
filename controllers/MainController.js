@@ -27,7 +27,8 @@ const app = angular.module('racerApp', ['ngCookies']);
 // Class Index datasets
 app.value('Cats', 
   {soloCats: cats,
-  ProSoloCats: prosoloCats}   
+  ProSoloCats: prosoloCats,
+  AASCats: AAS}   
 );
 
 /* eslint-disable no-param-reassign */
@@ -37,6 +38,7 @@ app.controller('SoloCtrl', ['$scope', '$log', '$cookies', '$location', '$anchorS
   $scope.viewComp = false;
   $cookies.put("test", "test");
   $log.log("cookie: ", $cookies.get("test"))
+  $scope.categories = Cats.soloCats;
 
   $scope.showEquivalents = function(){
     if ($window.innerWidth < 550){
@@ -69,13 +71,16 @@ app.controller('SoloCtrl', ['$scope', '$log', '$cookies', '$location', '$anchorS
     $scope.compTime = '';
   };
 
-  $scope.$watch('toggle', function () {
+  $scope.setCategories = function setCategories(category) {
     $scope.clearVals();
     $scope.clearCompVals();
-    $scope.sourceText = $scope.toggle ? 'ProSolo Indices' : 'Solo Indices';
-    $scope.toggleText = $scope.toggle ? 'Switch to Solo' : 'Switch to ProSolo';
-    $scope.categories = $scope.toggle ? Cats.ProSoloCats : Cats.soloCats;
-  });
+    $scope.categories = (category === "solo") ? Cats.soloCats : 
+                        (category === "prosolo") ? Cats.ProSoloCats :
+                        Cats.AASCats;
+    $scope.sourceText = (category === "solo") ? "Solo Indices" : 
+                        (category === "prosolo") ? "ProSolo Indices":
+                        "AAS Indices";
+  }
 
 // COOKIES
   $scope.setCatCookie = function setCatCookie() {

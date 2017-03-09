@@ -1,4 +1,4 @@
-var cats = {
+const cats = {
     "Street Touring": {
         STF: 0.8, 
         STU: 0.831, 
